@@ -3,7 +3,7 @@
 <%= form_with model: @tweet, local: true do |form| %>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+      <h2><%= pluralize(@tweet.errors.count, "error") %> this message can not be saved due to :</h2>
       <ul>
         <% @tweet.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,7 +14,7 @@
 
   <div>
     <%= form.label :content %><br>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, size: 40 %>
   </div>
 
   <div>
@@ -23,3 +23,4 @@
 <% end %>
 
 <%= link_to 'Back', tweets_path %>
+
